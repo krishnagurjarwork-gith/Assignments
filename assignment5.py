@@ -1,9 +1,11 @@
 import requests
+import random
 
 print("Assignment 5")
 print("1. Weather API")
 print("2. Joke API")
 print("3. Cat Fact API")
+print("4. Rock Paper Scissors Game")
 
 choice = input("Enter choice: ")
 
@@ -42,5 +44,29 @@ elif choice == "3":
 
     print(data["fact"])
 
+
+elif choice == "4":
+
+    options = ["rock", "paper", "scissors"]
+
+    computer = random.choice(options)
+
+    user = input("Enter rock, paper or scissors: ").lower()
+
+    print("Computer chose:", computer)
+
+    if user == computer:
+        print("Match Draw!")
+
+    elif ((user == "rock" and computer == "scissors") or
+          (user == "paper" and computer == "rock") or
+          (user == "scissors" and computer == "paper")):
+
+        print("You Win!")
+
+    else:
+        print("Computer Wins!")
+
+
 else:
-    print("Invalid choice")
+    print("Invalid Choice")
